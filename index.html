@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>kULudo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+    <header>
+        <div class="logo">
+            <span class="k-red">K</span>
+            <span class="k-yellow">U</span>
+            <span class="k-green">L</span>
+            <span class="k-red">u</span>
+            <span class="k-yellow">d</span>
+            <span class="k-green">o</span>
+        </div>
+    </header>
+
+    <main>
+        <!-- Tela inicial -->
+        <section id="home" class="screen active">
+            <button class="btn" data-target="regras">Regras</button>
+            <button class="btn" data-target="jogadores">Jogadores</button>
+            <button class="btn" data-target="placar">Placar</button>
+            <button class="btn" id="btn-streme">Streme</button>
+        </section>
+
+        <!-- Regras -->
+        <section id="regras" class="screen">
+            <button class="btn-voltar" data-target="home">← Voltar</button>
+            <h2>Regras do kULudo</h2>
+            <pre class="texto-bloco">
+REGULAMENTO SOLENÍSSIMO DO KULUDO (resumido)
+
+• Objetivo: levar seus peões até o centro (CU Ludo).
+• Saída da base: só com 1 ou 6.
+• Tirou 6: joga de novo. Três 6 seguidos: o último peão volta pra casa.
+• Movimento: sempre no sentido horário.
+• Comida: se cair na casa de outro, manda o peão adversário de volta para a base.
+• Casas seguras: não pode comer ninguém.
+• Barreira: duas peças da mesma cor na mesma casa travam a passagem.
+• Corredor final: precisa do número exato para entrar e chegar ao centro.
+• Vence: quem colocar os 4 peões no CU Ludo primeiro.
+            </pre>
+        </section>
+
+        <!-- Jogadores -->
+        <section id="jogadores" class="screen">
+            <button class="btn-voltar" data-target="home">← Voltar</button>
+            <h2>Jogadores</h2>
+
+            <div class="card jogador amarelo">
+                <h3>Marcelo</h3>
+                <p><strong>Mascote:</strong> Dragão feroz 🐲</p>
+                <p>
+                    Marcelo é aquele tipo de jogador que não está aqui pra vencer… ele está aqui pra causar.
+                    Adora comer as peças dos outros, espalhar o caos no tabuleiro e quase sempre sai vitorioso
+                    desse jeito agressivo.
+                </p>
+            </div>
+
+            <div class="card jogador vermelho">
+                <h3>Leandro</h3>
+                <p><strong>Mascote:</strong> Ursinho de pelúcia 🧸</p>
+                <p>
+                    Leandro é o estrategista azarado. Pensa cada jogada, mas o dado parece ter um contrato
+                    exclusivo com o desastre. Quando tudo vai dar certo… não dá.
+                </p>
+            </div>
+
+            <div class="card jogador verde">
+                <h3>Filipe</h3>
+                <p><strong>Mascote:</strong> Coelhinho fofinho 🐰</p>
+                <p>
+                    Filipe é o mestre de fugir da prisão e viver nos “safe points”. Quase nunca fica preso,
+                    corre leve pelo tabuleiro e coleciona vitórias com cara de quem nem se esforçou.
+                </p>
+            </div>
+        </section>
+
+        <!-- Placar -->
+        <section id="placar" class="screen">
+            <button class="btn-voltar" data-target="home">← Voltar</button>
+            <h2>Placar</h2>
+
+            <div class="card">
+                <h3>Placar geral</h3>
+                <div class="linha-placar">
+                    <label class="vermelho">Leandro</label>
+                    <input type="text" id="p-leandro" value="3.5">
+                </div>
+                <div class="linha-placar">
+                    <label class="amarelo">Marcelo</label>
+                    <input type="text" id="p-marcelo" value="17">
+                </div>
+                <div class="linha-placar">
+                    <label class="verde">Filipe</label>
+                    <input type="text" id="p-filipe" value="14">
+                </div>
+                <button class="btn" id="btn-salvar-placar">Salvar placar</button>
+            </div>
+
+            <div class="card">
+                <h3>Percentual de vitórias</h3>
+                <p id="perc-leandro" class="vermelho"></p>
+                <p id="perc-marcelo" class="amarelo"></p>
+                <p id="perc-filipe" class="verde"></p>
+            </div>
+
+            <div class="card">
+                <h3>Placar mano a mano</h3>
+                <p>Marcelo x Leandro: <strong>7 x 3</strong></p>
+                <p>Marcelo x Filipe: <strong>1 x 0</strong></p>
+            </div>
+
+            <div class="card">
+                <h3>Histórico de alterações</h3>
+                <ul id="historico-lista"></ul>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
