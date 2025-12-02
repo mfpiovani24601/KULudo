@@ -28,12 +28,65 @@ header {
     font-size: 40px;
     font-weight: 700;
     letter-spacing: 2px;
+    display: inline-block;
+    cursor: default;
+}
+
+/* Animação das letras do KULudo */
+.logo span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(10px) scale(0.9);
+    animation: logo-pop 0.6s ease-out forwards;
+}
+
+/* Delay diferente para cada letra (entra uma depois da outra) */
+.logo span:nth-child(1) { animation-delay: 0.0s; }
+.logo span:nth-child(2) { animation-delay: 0.08s; }
+.logo span:nth-child(3) { animation-delay: 0.16s; }
+.logo span:nth-child(4) { animation-delay: 0.24s; }
+.logo span:nth-child(5) { animation-delay: 0.32s; }
+.logo span:nth-child(6) { animation-delay: 0.40s; }
+
+/* Efeito extra quando passa o mouse: um pulinho suave */
+.logo:hover span {
+    animation: logo-bounce 0.35s ease-out;
 }
 
 /* Cores estilo Google */
 .k-red { color: #DB4437; }
 .k-yellow { color: #F4B400; }
 .k-green { color: #0F9D58; }
+
+/* Keyframes da entrada */
+@keyframes logo-pop {
+    0% {
+        opacity: 0;
+        transform: translateY(10px) scale(0.9);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(-3px) scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Keyframes do pulinho no hover */
+@keyframes logo-bounce {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    40% {
+        transform: translateY(-4px) scale(1.05);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
 
 main {
     flex: 1;
@@ -151,3 +204,4 @@ h2 {
 #historico-lista li {
     margin-bottom: 4px;
 }
+
